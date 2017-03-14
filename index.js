@@ -50,10 +50,6 @@ function resolveValue(value, variables, result, decl) {
     var post
     // undefined and without fallback, just keep original value
     if (!variable && !fallback) {
-      result.warn(
-        "variable '" + name + "' is undefined and used without a fallback",
-        {node: decl}
-      )
       post = matches.post
         ? resolveValue(matches.post, variables, result, decl)
         : [""]
